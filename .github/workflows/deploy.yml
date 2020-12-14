@@ -31,4 +31,4 @@ jobs:
             git pull
             docker rm -f web-project
             docker build -t web-project .
-            docker run --name web-project --network web-project_web-project -p 3000:3000 web-project
+            docker run --name web-project --network web-project_web-project -p 3000:3000 web-project -d
