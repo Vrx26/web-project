@@ -28,6 +28,7 @@ jobs:
           key: ${{ secrets.KEY }}
           script: |
             cd web-project
+            git checkout master
             git pull
             docker rm -f web-project
             docker build -t web-project .
