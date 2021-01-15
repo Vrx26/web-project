@@ -3,6 +3,6 @@
         "MONGO_USER": "mongo",
         "MONGO_PASSWORD": "mongopass",
         "MONGO_DEFAULT_DATABASE": "shop",
-        "STRIPE_KEY": "sk_test_T8OE02SHDZWLwk4TYtrWlsat"
+        "STRIPE_KEY": "example"
     }
 }
