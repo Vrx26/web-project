@@ -21,7 +21,7 @@ const User = require('./models/user');
 
 const MONGODB_URI = `mongodb://${process.env.MONGO_USER}:${
   process.env.MONGO_PASSWORD
-}@localhost:27017/${process.env.MONGO_DEFAULT_DATABASE}`;
+}@web-project_mongo_1:27017/${process.env.MONGO_DEFAULT_DATABASE}`;
 console.log("test message");
 const app = express();
 const store = new MongoDBStore({
@@ -127,8 +127,6 @@ app.get('/500', errorController.get500);
 app.use(errorController.get404);
 
 app.use((error, req, res, next) => {
-  // res.status(error.httpStatusCode).render(...);
-  // res.redirect('/500');
   res.status(500).render('500', {
     pageTitle: 'Error!',
     path: '/500',
@@ -139,9 +137,6 @@ app.use((error, req, res, next) => {
 mongoose
   .connect(MONGODB_URI)
   .then(result => {
-    // https
-    //   .createServer({ key: privateKey, cert: certificate }, app)
-    //   .listen(process.env.PORT || 3000);
       app.listen(process.env.PORT || 3000);
   })
   .catch(err => {
